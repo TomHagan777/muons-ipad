@@ -81,7 +81,7 @@ function setup() {
 
 ////INTIALISE MUONS FOR TESTING////////////////////////////////////////////////////////////////////////////////////
  
-  muon = 50;
+  muon = 100;
   muon2 = muon+1;
 
   for (let i=0; i<muon; i++) {
@@ -314,10 +314,14 @@ if (hours >= 10){
 if (keyCode === DOWN_ARROW){ //keyboard controls to hide text + menu
   hideControl++;
   standByFill = [0,0,100,0];
-} 
+} else {
+  hideControl = 50;
+  standByFill = [0,0,100,0];
+}
 if (hideControl >= 50){
   hideControl = 50;
 } 
+
 if (keyCode === UP_ARROW){
   hideControl--;
   standByFill = [0,0,75,100];
@@ -345,31 +349,31 @@ if (hideControl <= 0){
 ///////////////////////////////////////////////// Custom Cursors ¬  
 
   //conditiionals for different cursors ¬
-  if (fluxMode == true || burnMode == true){
-    cursorVisibility = 0;
-  } 
-  if (fluxMode == true && burnMode == false){
-    cursor('grab');
-  } else if (fluxMode == false && burnMode == true && keyCode != DOWN_ARROW){
-    cursor('cell');
-  } else if (fluxMode == true && burnMode == true){
-    cursor('grab');
-  } else {
-    noCursor();
-    cursorVisibility = 1;
-  }
+  // if (fluxMode == true || burnMode == true){
+  //   cursorVisibility = 0;
+  // } 
+  // if (fluxMode == true && burnMode == false){
+  //   cursor('grab');
+  // } else if (fluxMode == false && burnMode == true && keyCode != DOWN_ARROW){
+  //   cursor('cell');
+  // } else if (fluxMode == true && burnMode == true){
+  //   cursor('grab');
+  // } else {
+  //   noCursor();
+  //   cursorVisibility = 1;
+  // }
 
-  //cursor disappears when mouse runs off canvas ¬
-  if (mouseX <= 0 || mouseX >= width-1 || mouseY <= 0 || mouseY >= height-1 || keyCode === DOWN_ARROW){
-    cursorVisibility = 0;
-  }
+  // //cursor disappears when mouse runs off canvas ¬
+  // if (mouseX <= 0 || mouseX >= width-1 || mouseY <= 0 || mouseY >= height-1 || keyCode === DOWN_ARROW){
+  //   cursorVisibility = 0;
+  // }
 
-  //cursor design ¬
-  stroke(annotationsFill);
-  strokeWeight(cursorVisibility);
-  line(mouseX-5, mouseY, mouseX+5, mouseY);
-  line(mouseX, mouseY-5, mouseX, mouseY+5);
-  noStroke();
+  // //cursor design ¬
+  // stroke(annotationsFill);
+  // strokeWeight(cursorVisibility);
+  // line(mouseX-5, mouseY, mouseX+5, mouseY);
+  // line(mouseX, mouseY-5, mouseX, mouseY+5);
+  // noStroke();
 }
 
   if (muon >= 1000){ //resets sketch when muons get to 600
@@ -395,7 +399,7 @@ class StarNature{
     this.dir.x = sin(angle);        //x and y constrained to same angle to meet noise line
     this.dir.y = sin(angle);
     let velocity = this.dir.copy(); //copies direction vector for the below ¬
-    let directionNew = newMouseX;   //where speed + direction mouse control happens
+    let directionNew = 8;           //where speed + direction mouse control happens
     velocity.mult(this.speed * directionNew); //velocity * (speed * directionNew)
     this.loc.add(velocity);         //adds velocity to locaiton
   }
