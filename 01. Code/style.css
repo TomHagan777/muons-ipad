@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; 
+}
+
+p{
+  font-size: 14px;
+  font-family: 'Inter';
+  font-weight: 400;
+  color: white;
+}
+
+canvas {
+  display: block;
+}
