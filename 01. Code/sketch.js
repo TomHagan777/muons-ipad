@@ -375,7 +375,7 @@ if (hideControl <= 0){
   // noStroke();
 }
 
-  if (muon >= 1000){ //resets sketch when muons get to 600
+  if (muon >= 720){ //resets sketch
     resetCount();
   }
 }
