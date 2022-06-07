@@ -315,10 +315,10 @@ if (keyCode === DOWN_ARROW){ //keyboard controls to hide text + menu
   hideControl++;
   standByFill = [0,0,100,0];
 } else {
-  hideControl = 50;
+  hideControl = 100;
   standByFill = [0,0,100,0];
 }
-if (hideControl >= 50){
+if (hideControl >= 100){
   hideControl = 50;
 } 
 
