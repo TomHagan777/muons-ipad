@@ -81,7 +81,7 @@ function setup() {
 
 ////INTIALISE MUONS FOR TESTING////////////////////////////////////////////////////////////////////////////////////
  
-  muon = 100;
+  muon = 50;
   muon2 = muon+1;
 
   for (let i=0; i<muon; i++) {
@@ -398,7 +398,7 @@ class StarNature{
     this.dir.x = sin(angle);        //x and y constrained to same angle to meet noise line
     this.dir.y = sin(angle);
     let velocity = this.dir.copy(); //copies direction vector for the below ¬
-    let directionNew = 8;           //where speed + direction mouse control happens
+    let directionNew = 4;           //where speed + direction mouse control happens
     velocity.mult(this.speed * directionNew); //velocity * (speed * directionNew)
     this.loc.add(velocity);         //adds velocity to locaiton
   }
