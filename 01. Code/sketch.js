@@ -324,7 +324,6 @@ if (hideControl >= 50){
 
 if (keyCode === UP_ARROW){
   hideControl--;
-  standByFill = [0,0,75,100];
 } 
 if (hideControl <= 0){
   hideControl = 0;
